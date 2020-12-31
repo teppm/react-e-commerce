@@ -34,6 +34,7 @@ class App extends React.Component {
               ...snapShot.data(),
             },
           });
+          console.log(this.state);
         });
       }
       this.setState({ currentUser: userAuth });
@@ -46,12 +47,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header currentUser={this.state.currentUser} />
+        <Header currentUser={this.state.currentUser} />{' '}
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/shop" component={ShopPage} />
-          <Route exact path="/signin" component={SignInAndSignUpPage} />
-        </Switch>
+          <Route exact path="/" component={HomePage} />{' '}
+          <Route exact path="/shop" component={ShopPage} />{' '}
+          <Route exact path="/signin" component={SignInAndSignUpPage} />{' '}
+        </Switch>{' '}
       </div>
     );
   }
