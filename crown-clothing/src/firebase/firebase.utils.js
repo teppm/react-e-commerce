@@ -68,7 +68,10 @@ export const convertCollectionSnapshopToMap = (collections) => {
             items,
         };
     });
-    console.log('transformedColl:', transformedCollection);
+    return transformedCollection.reduce((accumulator, collection) => {
+        accumulator[collection.title.toLowerCase()] = collection;
+        return accumulator;
+    }, {});
 };
 
 export const auth = firebase.auth();
