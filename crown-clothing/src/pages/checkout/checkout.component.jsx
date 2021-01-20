@@ -13,7 +13,6 @@ import {
   HeaderBlock,
   CheckoutTotal,
   CheckoutWarning,
-  CheckoutButton,
 } from './checkout.styles';
 
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
