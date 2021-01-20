@@ -27,7 +27,14 @@ class ShopPage extends React.Component {
     const { updateCollections } = this.props;
     const collectionRef = firestore.collection('collections');
 
-    collectionRef.onSnapshot(async (snapshot) => {
+    // fetch(
+    //   'https://firestore.googleapis.com/v1/projects/crown-clothing-ce1a8/databases/(default)/documents/collections/'
+    // )
+    //   .then((response) => response.json())
+    //   .then((collections) => console.log(collections));
+    // above example of fetch
+
+    collectionRef.get().then(async (snapshot) => {
       const collectionsMap = convertCollectionSnapshopToMap(snapshot);
       updateCollections(collectionsMap);
       this.setState({ loading: false });
